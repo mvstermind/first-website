@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-shamrock-300;
+  }
+  main{
+    @apply text-black;
+  }
+}
+@layer components{
+  li{
+    @apply hover:underline decoration-shamrock-800;
+  }
+}
