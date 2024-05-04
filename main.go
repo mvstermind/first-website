@@ -7,20 +7,26 @@ import (
 
 func main() {
 	mux := http.NewServeMux()
-	fs := http.FileServer(http.Dir("./static"))
-	mux.Handle("/static", http.StripPrefix("/static", fs))
+
+	fs := http.FileServer(http.Dir("./ui"))
+	mux.Handle("/static/", http.StripPrefix("/ui", fs))
 
 	mux.HandleFunc("/{$}", home)
+	mux.HandleFunc("/about", about)
 
-	log.Print("SHOOOOO :2137")
+	log.Print("Starting server on :4040")
 
-	err := http.ListenAndServe(":2137", mux)
+	err := http.ListenAndServe(":4040", mux)
 	if err != nil {
-		log.Fatal(err)
+		log.Print("Error: ", err)
 		return
 	}
+
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
-	log.Print("Home page visited")
+	http.ServeFile(w, r, "./ui/index.html")
+}
+func about(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "./ui/about.html")
 }
