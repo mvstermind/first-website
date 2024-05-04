@@ -8,11 +8,9 @@ import (
 func main() {
 	mux := http.NewServeMux()
 
-	fs := http.FileServer(http.Dir("./ui"))
-	mux.Handle("/static/", http.StripPrefix("/ui", fs))
+	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
-	mux.HandleFunc("/{$}", home)
-	mux.HandleFunc("/about", about)
+	mux.HandleFunc("/", home)
 
 	log.Print("Starting server on :4040")
 
@@ -25,8 +23,5 @@ func main() {
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "./ui/index.html")
-}
-func about(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "./ui/about.html")
+	http.ServeFile(w, r, "index.html")
 }

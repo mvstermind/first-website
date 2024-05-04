@@ -1,3 +1,4 @@
-ui/pages/style.css
-
 .DS_Store
+tailwind.config.js
+
+./static/output.css
