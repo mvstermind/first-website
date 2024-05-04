@@ -2,26 +2,31 @@ package main
 
 import (
 	"log"
-	"net/http"
+
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/template/html/v2"
 )
 
 func main() {
-	mux := http.NewServeMux()
 
-	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	engine := html.New("./web/views", ".html")
 
-	mux.HandleFunc("/", home)
+	app := fiber.New(fiber.Config{
+		Views: engine,
+	})
 
-	log.Print("Starting server on :4040")
+	app.Static("/static", "./web/styles/")
 
-	err := http.ListenAndServe(":4040", mux)
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.Render("index", fiber.Map{
+			"Name": "Me",
+		})
+
+	})
+
+	err := app.Listen(":42069")
 	if err != nil {
-		log.Print("Error: ", err)
+		log.Print("App cannot be started")
 		return
 	}
-
-}
-
-func home(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "index.html")
 }
