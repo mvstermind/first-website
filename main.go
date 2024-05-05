@@ -17,6 +17,10 @@ func main() {
 		return c.SendFile("./web/pages/index.html", true)
 	})
 
+	app.Get("/about", func(c *fiber.Ctx) error {
+		return c.SendFile("./web/pages/about.html", true)
+	})
+
 	err := app.Listen(":40680")
 	if err != nil {
 		log.Print("App cannot be started")
