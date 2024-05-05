@@ -17,7 +17,7 @@ func main() {
 		return c.SendFile("./web/pages/index.html", true)
 	})
 
-	err := app.Listen(":42069")
+	err := app.Listen(":40680")
 	if err != nil {
 		log.Print("App cannot be started")
 		return

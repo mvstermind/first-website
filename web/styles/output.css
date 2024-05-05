@@ -559,8 +559,12 @@ body {
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
+h1 {
+  font-family: 'IBM', monospace;
+}
+
 p {
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: 'IBM', monospace;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding-top: 0.25rem;
