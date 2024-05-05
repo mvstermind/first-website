@@ -29,6 +29,11 @@ p{
   @apply font-IBM text-2xl my-4 text-white py-1;
 }
 
+.about{
+  @apply font-IBM text-xl my-4 text-white py-1;
+}
+
+
 @layer components {
   .font-IBM {
     font-family: 'IBM', monospace;

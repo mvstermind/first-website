@@ -609,3 +609,15 @@ p {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.about {
+  font-family: 'IBM', monospace;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
