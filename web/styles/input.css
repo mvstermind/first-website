@@ -8,8 +8,21 @@ body{
   @apply bg-slate-600;
 }
 
+.color{
+  @apply text-teal-300;
+}
+
+.hover-link{
+  @apply text-teal-300 hover:underline ;
+
+}
+
+.center{
+  @apply mx-auto w-10/12;
+}
+
 h1{
-  @apply font-IBM ;
+  @apply font-IBM pb-10 pt-6 text-center font-IBM text-4xl font-semibold text-white duration-1000 hover:text-teal-300;
 }
 
 p{

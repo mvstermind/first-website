@@ -559,8 +559,42 @@ body {
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
+.color {
+  --tw-text-opacity: 1;
+  color: rgb(94 234 212 / var(--tw-text-opacity));
+}
+
+.hover-link {
+  --tw-text-opacity: 1;
+  color: rgb(94 234 212 / var(--tw-text-opacity));
+}
+
+.hover-link:hover {
+  text-decoration-line: underline;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 83.333333%;
+}
+
 h1 {
   font-family: 'IBM', monospace;
+  padding-bottom: 2.5rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-duration: 1000ms;
+}
+
+h1:hover {
+  --tw-text-opacity: 1;
+  color: rgb(94 234 212 / var(--tw-text-opacity));
 }
 
 p {
