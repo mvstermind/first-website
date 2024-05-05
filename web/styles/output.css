@@ -553,3 +553,21 @@ video {
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }
+
+body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+
+p {
+  font-family: 'IBM Plex Mono', sans-serif;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
